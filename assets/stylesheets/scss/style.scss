@@ -1,0 +1,413 @@
+  /*
+          * Bootstrap SASS
+          * Mixin Bourbon
+          * Fonts Awesome
+          * Variables
+          * Mixin
+      */
+
+  @import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+  @import "../../../node_modules/bourbon/app/assets/stylesheets/bourbon";
+  @import "../../../bower_components/font-awesome/scss/font-awesome";
+  @import "../partials/variables";
+  @import "../partials/mixins";
+  /* --------------------------------
+
+  Site:
+
+  -------------------------------- */
+
+  .jm-site {
+    // Reset
+    @include padding(0);
+    h1, h2, h3, h4, h5, h6, p {
+      font-family: 'Lato', sans-serif !important;
+      font-weight: 300 !important;
+    }
+    h1 {
+      font-size:$font-size-h1 - 6;
+    }
+    p {
+      line-height: $line-height-base + 0.30;
+    }
+    .jm-no-margin {
+      @include no-margin();
+    }
+    .spacer {
+      height: em(50);
+    }
+
+    /* --------------------------------------
+
+    Header: Logo / Nav / Img Header / Login
+
+    --------------------------------------- */
+
+    .jm-header {
+
+      //== Background + Logo + Nav
+      //
+      //## Set Bckground header, logo and nav in the same Row.
+
+      @include background-image(url("../../images/jm-bg-header.png"));
+      @include jm-full-bg();
+
+
+      /* --------------------------------------
+
+      Logo / Nav
+
+     --------------------------------------- */
+
+
+      .jm-logo, .jm-nav {
+        @include padding(em(30));
+      }
+      .jm-logo, .slogan {
+        float:left;
+
+        h1 {
+          font-size:$font-size-h1 / 2;
+
+          line-height: 3.7;
+
+        }
+      }
+      // Logo
+      .jm-logo {
+        h1 {
+          font-size: 100%;
+        }
+      }
+      // Nav
+      .jm-nav {
+        text-align: right;
+        @include jm-rounded-btn($gray-dark, transparent, transparent, transparent, em(14), em(65));
+        a {
+          font-weight: normal !important;
+        }
+      }
+      /* --------------------------------------
+
+        Title Big header
+
+       --------------------------------------- */
+      .first-section-txt-header {
+        h1 {
+          color: $gray-light;
+          -vendor-animation-duration: 5s;
+          -vendor-animation-delay: 20s;
+        }
+        h5 {
+          color: $color-trinidad;
+        }
+        span {
+          color: $gray-base;
+        }
+        i {
+          color: $color-green-haze;
+          @include transform(scale(0.9) scaleX(-1));
+        }
+      }
+      /* --------------------------------------
+
+       Image / Login
+
+       --------------------------------------- */
+
+      .jm-img-fruits-login .jm-col-img-fruits {
+        @include padding(em(80));
+      }
+      // Login Section
+      .jm-col-login {
+        background-color: rgba(255, 255, 255, .55) !important;
+        h3 {
+          color: $color-observatory;
+        }
+        h5 {
+          font-weight: 400 !important;
+        }
+        // Label Over Input Login, Change Position
+        label {
+          @include transform(translateY(em(18)));
+          margin-left: em(20);
+          padding: 0 !important;
+          @include background-image(linear-gradient(white 0, transparent 0, $color-chrome-white 0%));
+
+          border-bottom: solid em(3) $body-bg !important;
+          color: $color-dusty-gray !important;
+          font-size: $font-size-small !important;
+          font-weight: 400;
+        }
+        /* --------------------------------------
+
+         Label over input Login
+
+         --------------------------------------- */
+        .is-focused {
+          label {
+            color: $color-mariner !important;
+          }
+        }
+        // Input email + password + btn submit
+        input[type="password"],
+        input[type="email"] {
+          @include padding(em(27) em(18));
+        }
+        // Btn Login
+        @include jm-rounded-btn($color-white,
+                $color-observatory,
+                $gray-lighter,
+                $color-white,
+                em(14),
+                em(35));
+        .btn {
+          font-weight: 100 !important;
+          padding-right: em(16);
+        }
+        .btn:hover { background-color:$color-green-haze; }
+        .login {
+          @include padding(em(50) em(80) em(30) em(80));
+        }
+        .txt-privacy {
+          @include padding(em(0) em(40) em(30) em(40));
+          a {
+            text-decoration: none;
+          }
+        }
+        .txt-color-login {
+          color: $color-observatory; font-weight:400;
+        }
+      }
+      /* --------------------------------------
+
+       Last Row header / 3 items
+
+       --------------------------------------- */
+      .jm-items-bottom-header {
+        div {
+          @include padding(em(20));
+          background-color: $color-trinidad;
+          color: $color-white;
+          font-weight: 100;
+          letter-spacing: em(2);
+        }
+        :first-child {
+          background-color: $color-cornflower-blue;
+        }
+        :last-child {
+          background-color: $color-observatory;
+        }
+        .fa {
+          background-color: transparent;
+        }
+      }
+    }
+
+    /* --------------------------------
+
+    Content : Article 2 / Article 4
+
+    -------------------------------- */
+    // Content Section After Header
+    .jm-content {
+      h1 {
+        @include padding(5%);
+      }
+      p,
+      h1,
+      h4 {
+        color: $gray-light;
+      }
+      h5 {
+        color: $color-trinidad;
+      }
+      /* --------------------------------------
+
+       Article 2 width 2 small images
+
+       --------------------------------------- */
+      .article-2 {
+        .jm-col {
+          padding-right: 7%;
+          padding-left: 7%;
+        }
+        @include jm-rounded-btn($color-observatory,
+                $color-white,
+                $gray-lighter,
+                $color-white,
+                em(10),
+                em(22));
+        .btn {
+          max-width: em(225);
+          border: solid em(1);
+          font-weight: 300;
+        }
+      }
+      /* --------------------------------------
+
+       Article 4 width 3 columns / Text
+
+       --------------------------------------- */
+      .article-4 {
+        p {
+          @include padding(em(15));
+        }
+        .fa-heart {
+          color: $color-apricot-peach;
+        }
+        .fa-thumbs-up {
+          color: $color-sail;
+        }
+        .fa-leaf {
+          color: $color-pastel-green;
+        }
+      }
+    }
+    /* --------------------------------
+
+    Footer
+
+    -------------------------------- */
+
+    .jm-footer {
+
+      div {
+        @include padding(em(20) 0);
+      }
+      background-color: $color-cornflower-blue;
+      h1,
+      h4 {
+        color: $color-white;
+      }
+      h4 {  font-weight:100; font-size:$font-size-h4 - 4;}
+
+      @include jm-rounded-btn($color-cornflower-blue,
+              $color-white,
+              $gray-lighter,
+              $color-white,
+              em(14),
+              em(65));
+      text-transform: none !important;
+    }
+  }
+
+
+    // Media Query
+
+  /* --------------------------------
+
+      Breakpoints XS-MAX
+
+  -------------------------------- */
+
+
+
+  @media (max-width: $screen-xs-max) {
+    .jm-nav   {
+      padding-left:0 !important;
+      padding-top: em(40) !important;
+      a {
+        padding-left:0 !important;
+      }
+    }
+    .first-section-txt-header h1 {
+      font-size:$font-size-h1 / 2 + 4;
+    }
+    //== Login
+    //
+    //## Centring login small screen.
+    .jm-col-login  {
+      .login {
+
+       padding-left:em(40) !important;
+        padding-right:em(40) !important;
+      }
+      h5 {
+        text-align:center;
+      }
+      .sign-up {
+        text-align:center;
+        .btn {
+          width: 100%;
+        }
+      }
+
+    }
+    .jm-col-img-fruits {
+      padding-top:0 !important;
+
+    }
+    // 3 Items With Colors, Bottom Header
+    .jm-items-bottom-header {
+      text-align: left;
+      div {
+        padding-left: em(50) !important;
+        font-size:$font-size-small;
+      }
+    }
+    //== Text H1 Article 1
+    //
+    //## Change size text.
+    .article-1 h1 {
+      font-size: $font-size-h1 / 2 + 5;
+    }
+    .article-2 {
+      text-align: center;
+    }
+    //== Text Footer
+    //
+    //## Change size text.
+    .jm-footer {
+      h1 {
+        font-size: $font-size-h1 / 2 + 5;
+      }
+      h4 {
+        font-size: $font-size-h4 / 2 + 4;
+      }
+    }
+  }
+  /* --------------------------------
+
+    Breakpoints SM-MAX
+
+  -------------------------------- */
+
+  @media (max-width: $screen-sm-max) {
+    .login  {
+      h5 {
+        text-align:center;
+      }
+    }
+    // Article 2
+    .article-2 {
+      .jm-col {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+  }
+
+  /* --------------------------------
+
+    Breakpoints SM-MIN /  MD-MAX
+
+  -------------------------------- */
+
+  @media (min-width: $screen-sm-min) and (max-width: $screen-md-max) {
+    // Login
+    .jm-col-login {
+      .login {
+        padding-right: em(50) !important;
+        padding-left: em(50) !important;
+      }
+    }
+    .jm-col-img-fruits {
+      padding-right: em(20) !important;
+      padding-left: em(20) !important;
+    }
+    .jm-items-bottom-header {
+      padding-left: em(10);
+      font-size: em(12);
+    }
+  }

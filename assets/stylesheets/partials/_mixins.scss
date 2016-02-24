@@ -1,0 +1,46 @@
+
+  /**
+    * Remove margin
+    * Custon buttons
+    * Full Image background
+    */
+
+  @mixin no-margin() {
+    margin:0 !important;
+  }
+  @mixin jm-full-bg {
+    background-position: center top, center;
+    background-repeat: no-repeat, repeat-x;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  @mixin jm-rounded-btn ($txt-color, $bg-color, $hover-color, $active-color, $padding-tb, $padding-lr) {
+      .btn {
+        padding:  $padding-tb $padding-lr;
+        border: 0 none;
+        border-radius:50px !important;
+        font-weight: 700;
+        letter-spacing: 1px;
+        cursor: pointer;
+      }
+      .btn:focus, .btn:active:focus, .btn.active:focus {
+        outline: 0 none;
+      }
+
+      .btn-primary {
+        background: $bg-color;
+        color: $txt-color;
+      }
+      .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+        background: $hover-color;
+
+
+      }
+      .btn-primary:active, .btn-primary.active {
+        background: $active-color;
+        box-shadow: none;
+      }
+  }

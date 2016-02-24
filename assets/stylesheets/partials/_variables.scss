@@ -1,0 +1,42 @@
+/* --------------------------------
+
+ Colors
+
+ -------------------------------- */
+
+
+$color-white:           #FFFFFF;
+$color-cornflower-blue:       #056572;
+$color-trinidad:              #F45C07;
+$color-observatory:           #038A7A;
+$color-green-haze:            #00A651;
+$color-apricot-peach:         #F9BDBD;
+$color-sail:                  #9DD7F6;
+$color-pastel-green:          #8EDF7E;
+$color-alto:                  #727272;
+$color-dusty-gray:            #999999;
+$color-mariner:               #1D7AC3;
+$color-chrome-white:          #E4F4D3;
+
+/* --------------------------------
+
+ Sizes
+
+ -------------------------------- */
+
+$base-font-size:              16px;
+$base-line-height:            24px;
+
+
+/* --------------------------------
+
+ Defining values Breakpoints
+
+ -------------------------------- */
+
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
